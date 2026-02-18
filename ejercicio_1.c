@@ -15,6 +15,13 @@ void invertirCadena(char *inicio) {
         // --- TU CÓDIGO AQUÍ ---
         // Implementa el intercambio usando la variable 'aux'
         // Desplaza los apuntadores adecuadamente
+         aux = *inicio;
+        *inicio = *fin;
+        *fin = aux;
+
+
+      inicio++;
+      fin--;
     }
 }
 
