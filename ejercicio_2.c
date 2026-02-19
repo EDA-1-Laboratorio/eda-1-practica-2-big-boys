@@ -42,6 +42,13 @@ int main() {
         // Caso B: Si *actual es mayor que *max2 (pero menor que max1)...
         //         max2 apunta al actual.
         // -----------------------
+
+        if (*actual > *max1){
+            max2 = max1;
+            max1 = actual;
+        } else if (*actual > *max2 && *actual < *max1){
+            max2 = actual;
+        }
     }
 
     // 3. Cálculo de distancia
@@ -60,3 +67,6 @@ int main() {
 // PREGUNTA: Si el max1 se encuentra en la dirección 0x100 y el max2 en la 0x108,
 // y estamos trabajando con enteros (int) de 4 bytes, 
 // ¿qué valor numérico devolverá la operación max2 - max1 y por qué no devuelve simplemente 8?
+// RESPUESTA: Devolvería 2, porque la distancia entre 108 y 100 está en bytes; por lo que tenemos 8 bytes de distancia.
+// Sin embargo, los enteros trabajan con 4 bytes, entonces la distancia como tal sería: 
+// 8 bytes (distancia en bytes entre posicones) / 4 bytes (valor de un entero en bytes) = 2 enteros
